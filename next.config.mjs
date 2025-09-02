@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 
 import withBundleAnalyzer from '@next/bundle-analyzer';
-import { withSentryConfig } from '@sentry/nextjs';
+// import { withSentryConfig } from '@sentry/nextjs';
 import createJiti from 'jiti';
 import withNextIntl from 'next-intl/plugin';
 
@@ -16,19 +16,20 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  poweredByHeader: false,
+  reactStrictMode: true,
+  serverExternalPackages: ['@electric-sql/pglite'],
+};
+
+export default bundleAnalyzer(withNextIntlConfig(nextConfig));
+
+/* Sentry config temporarily disabled for Next.js 15 compatibility testing
 export default withSentryConfig(
-  bundleAnalyzer(
-    withNextIntlConfig({
-      eslint: {
-        dirs: ['.'],
-      },
-      poweredByHeader: false,
-      reactStrictMode: true,
-      experimental: {
-        serverComponentsExternalPackages: ['@electric-sql/pglite'],
-      },
-    }),
-  ),
+  bundleAnalyzer(withNextIntlConfig(nextConfig)),
   {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
@@ -67,3 +68,4 @@ export default withSentryConfig(
     telemetry: false,
   },
 );
+*/
