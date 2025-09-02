@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import { getRequestConfig } from 'next-intl/server';
 
 import { AllLocales } from '@/utils/AppConfig';
@@ -14,13 +13,15 @@ import { AllLocales } from '@/utils/AppConfig';
 // 3. Every 24 hours at 5am, the workflow will run automatically
 
 // Using internationalization in Server Components
-export default getRequestConfig(async ({ locale }) => {
+export default getRequestConfig(async ({ requestLocale }) => {
+  // Typically corresponds to the `[locale]` segment
+  const requested = await requestLocale;
+
   // Validate that the incoming `locale` parameter is valid
-  if (!AllLocales.includes(locale)) {
-    notFound();
-  }
+  const locale = requested && AllLocales.includes(requested) ? requested : 'en';
 
   return {
+    locale,
     messages: (await import(`../locales/${locale}.json`)).default,
   };
 });
