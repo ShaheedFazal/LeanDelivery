@@ -1,11 +1,19 @@
 # AGENTS.md Maintainer Context
 
-- Date (UTC): 2025-09-02T10:03:38Z
-- Branch: feature/initial-setup
+- Date (UTC): 2025-09-02T10:08:35Z
+- Branch: feature/agents-md-generation
 - Since ref: v1.7.6
-- Commits since ref: 7
+- Commits since ref: 6
 
 ## Changed files since v1.7.6
+A	.agentsmd/README.md
+A	.agentsmd/logs/last-run.json
+A	.agentsmd/logs/updates.log
+A	.agentsmd/prompts/chatgpt-prompt.md
+A	.agentsmd/prompts/claude-prompt.md
+A	.agentsmd/prompts/template.md
+A	.agentsmd/scripts/agentsmd-context.sh
+A	.agentsmd/scripts/update-agents.sh
 A	.bmad-core/agent-teams/team-all.yaml
 A	.bmad-core/agent-teams/team-fullstack.yaml
 A	.bmad-core/agent-teams/team-ide-minimal.yaml
@@ -119,16 +127,21 @@ A	.claude/hooks/.auto-updated-20250827
 A	.claude/hooks/startup-hook.sh
 A	.claude/scripts/bmad-safe-upgrade.sh
 A	.claude/settings.json
+A	.dev/agentsmd-context.md
 M	.env.production
+A	.playwright-mcp/current-homepage.png
+A	.playwright-mcp/fixed-homepage.png
 M	.storybook/main.ts
 M	.storybook/preview.ts
+M	CHANGELOG.md
+A	CLAUDE.md
 M	README.md
-A	agentsmd-context.sh
 M	eslint.config.mjs
 M	next-env.d.ts
 M	next.config.mjs
 M	package-lock.json
 M	package.json
+M	postcss.config.js
 A	public/assets/images/nutrient-dark.png
 A	public/assets/images/nutrient-light.png
 A	public/assets/images/surveyjs.svg
@@ -145,12 +158,33 @@ M	src/app/[locale]/layout.tsx
 M	src/app/global-error.tsx
 M	src/components/Background.stories.tsx
 M	src/components/ToggleMenuButton.test.tsx
+M	src/components/ToggleMenuButton.tsx
+M	src/components/ui/accordion.tsx
+M	src/components/ui/button.tsx
+M	src/components/ui/data-table.tsx
+M	src/components/ui/dropdown-menu.tsx
+M	src/components/ui/form.tsx
+M	src/components/ui/input.tsx
+M	src/components/ui/label.tsx
+M	src/components/ui/separator.tsx
+M	src/components/ui/table.tsx
+M	src/components/ui/tooltip.tsx
+M	src/components/ui/useFormField.ts
+M	src/features/billing/PricingCard.tsx
 M	src/features/landing/CenteredFooter.test.tsx
+M	src/features/landing/CenteredMenu.tsx
+M	src/features/landing/FeatureCard.tsx
+M	src/features/landing/StickyBanner.tsx
 M	src/libs/DB.ts
+M	src/libs/Logger.ts
 M	src/libs/i18n.ts
 M	src/libs/i18nNavigation.ts
 M	src/models/Schema.ts
+M	src/styles/global.css
+M	src/types/Subscription.ts
 M	src/utils/AppConfig.ts
+M	src/utils/Helpers.ts
+M	tailwind.config.ts
 M	vitest.config.mts
 
 ## Existing AGENTS.md files
