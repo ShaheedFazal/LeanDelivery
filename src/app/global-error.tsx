@@ -9,7 +9,7 @@ export default async function GlobalError(props: {
   params: Promise<{ locale: string }>;
 }) {
   const params = await props.params;
-  
+
   useEffect(() => {
     Sentry.captureException(props.error);
   }, [props.error]);

@@ -1,4 +1,5 @@
-import { BILLING_INTERVAL, type PricingPlan } from '@/types/Subscription';
+import type { PricingPlan } from '@/types/Subscription';
+import { BILLING_INTERVAL } from '@/types/Subscription';
 
 const localePrefix = 'as-needed' as const;
 
