@@ -13,7 +13,7 @@ export const PricingCard = (props: {
   const t = useTranslations('PricingPlan');
 
   return (
-    <div className="rounded-xl border border-border px-6 py-8 text-center">
+    <div className="rounded-xl border border-[hsl(var(--border))] px-6 py-8 text-center">
       <div className="text-lg font-semibold">
         {t(`${props.planId}_plan_name`)}
       </div>
